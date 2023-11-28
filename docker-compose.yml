@@ -1,0 +1,11 @@
+version: '3.1'
+services:
+  mogodb:
+    image: mongo
+    container_name: modejs-boilerplate-mogodb-container
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongodb
+      MONGO_INITDB_ROOT_PASSWORD: 123456
+      MONGO_INITDB_USERNAME: mongodb
+    ports:
+      - "27017:27017"
