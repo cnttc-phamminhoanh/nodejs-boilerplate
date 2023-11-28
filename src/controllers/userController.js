@@ -11,7 +11,7 @@ const createOneUser = async (req, res, next) => {
 
 const getAllUser = async (req, res, next) => {
   try {
-    const users = null
+    const users = []
 
     if (!users) {
       throw HttpError.NotFound('User Not Found')
