@@ -2,16 +2,20 @@
 import express from 'express'
 import exitHook from 'async-exit-hook'
 import HttpError from 'http-errors'
+import cors from 'cors'
 import { CONNECT_DB, CLOSE_DB } from '~/config/mongodb'
 import { APIs_V1 } from '~/routes/v1'
 import { errorHandlingMiddleware } from './middlewares/errorHandlingMiddleware'
 import { env } from './config/environment'
+import { corsOptions } from './config/cors'
 
 const START_SERVER = () => {
   const app = express()
 
   const hostname = env.APP_HOST
   const port = env.APP_PORT
+
+  app.use(cors(corsOptions))
 
   app.use(express.json())
 
